@@ -1,3 +1,5 @@
+
+
 <?php
 
 // Connexion à la base de données
@@ -17,9 +19,12 @@ catch(Exception $e){
 // Récupération des 10 derniers messages
  $reponse = $bdd->query('SELECT pseudo, message, date FROM Minichat.minichat ORDER BY ID DESC LIMIT 0, 10');
 
- while ($donnees = $reponse->fetch()){
-    echo '<p><strong>' . htmlspecialchars($donnees['pseudo']) . '</strong> : ' . htmlspecialchars($donnees['message']) ." ". $donnees['date'] .'</p>';
+if(!$reponse) {
+    die($bdd->errorInfo()[2]);
 }
-$reponse->closeCursor();
+
+foreach ($reponse->fetchAll() as $message){
+    echo '<p><strong>' . htmlspecialchars($message['pseudo']) . '</strong> : ' . htmlspecialchars($message['message']) ." ". $message['date'] .'</p>';
+}
 
 ?>

@@ -14,6 +14,9 @@ catch(Exception $e)
 
  $req->execute(array($_POST['pseudo'], $_POST['message']));
 
+setcookie("cookiepseudo", $_POST["pseudo"], time() + (86400 * 2), "/");
+
+
 header("location: ../index.php" );
 
 ?>
