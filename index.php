@@ -20,10 +20,10 @@
             <hr class="my-4">
             <p class="lead">
             </p>
-                <form action="config/store.php" method="post" >
-                    <input type="text" placeholder="Pseudo" name="pseudo" value='<?php echo $_COOKIE["cookiepseudo"]?>' >
-                    <input type="text" placeholder="message" name="message" required >
-                    <input class="btn btn-primary btn-lg" type="submit" value="chat !" name="send">
+                <form action="config/store.php" id="formulaire" method="post" onsubmit="storeMessage(event, this)"  >
+                    <input type="text" id="pseudo"placeholder="Pseudo" name="pseudo" value='<?php echo $_COOKIE["cookiepseudo"]?>' >
+                    <input type="text" id="message" placeholder="message" name="message" required >
+                    <input id="submit" class="btn btn-primary btn-lg" type="submit" value="chat !" name="send">
                 </form>
         </div>
     </div>

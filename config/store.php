@@ -44,6 +44,6 @@ if(!$req) {
 setcookie("cookiepseudo", $_POST["pseudo"], time() + (86400 * 2), "/");
 
 // Redirection
-header("location: ../index.php" );
+//header("location: ../index.php" );
 
 ?>

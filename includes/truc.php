@@ -10,12 +10,10 @@ include "conexion.php";
                          ORDER BY ID DESC LIMIT 0, 10');
 
 
-
  //test erreur
 if(!$reponse) {
     die("Erreur mysql : ".$bdd->errorInfo()[2]);
 }
-
 
 
 //affichage des messages
