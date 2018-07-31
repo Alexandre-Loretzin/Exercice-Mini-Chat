@@ -11,6 +11,8 @@
     <title>Minichat</title>
   </head>
   <body>
+
+  <!--Formulaire chat-->
     <div class="container_fluid">  
         <div class="jumbotron ">
             <h1 class="display-4">Mini Chat ! </h1>
@@ -25,10 +27,12 @@
                 </form>
         </div>
     </div>
-    <div id="chat">
-        <?php 
-        include "includes/truc.php";?>
+
+ <!--Messages chat-->
+    <div id="chat" style="padding : 10px">
+        <?php include "includes/truc.php";?>
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

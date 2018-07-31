@@ -1,30 +1,26 @@
-
-
 <?php
 
 // Connexion à la base de données
 
-try{
-
-    $bdd = new PDO('mysql:host=localhost;dbname=Minichat;charset=utf8', 'root', '');
-
-}
-
-catch(Exception $e){
-
-        die('Erreur : '.$e->getMessage());
-
-}
-
+include "conexion.php";
 // Récupération des 10 derniers messages
- $reponse = $bdd->query('SELECT pseudo, message, date FROM Minichat.minichat ORDER BY ID DESC LIMIT 0, 10');
+ $reponse = $bdd->query('SELECT m.*, u.color
+                         FROM minichat m
+                         LEFT JOIN user u ON u.pseudo = m.pseudo
+                         ORDER BY ID DESC LIMIT 0, 10');
 
+
+
+ //test erreur
 if(!$reponse) {
-    die($bdd->errorInfo()[2]);
+    die("Erreur mysql : ".$bdd->errorInfo()[2]);
 }
 
+
+
+//affichage des messages
 foreach ($reponse->fetchAll() as $message){
-    echo '<p><strong>' . htmlspecialchars($message['pseudo']) . '</strong> : ' . htmlspecialchars($message['message']) ." ". $message['date'] .'</p>';
+    echo '<p><strong style="color : '.$message['color'].'">' . htmlspecialchars($message['pseudo']) . '</strong> : ' . htmlspecialchars($message['message']) ." ". $message['date'] .'</p>';
 }
 
 ?>
