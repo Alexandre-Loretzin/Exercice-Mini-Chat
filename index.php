@@ -21,7 +21,9 @@
             <p class="lead">
             </p>
                 <form action="config/store.php" id="formulaire" method="post" onsubmit="storeMessage(event, this)"  >
-                    <input type="text" id="pseudo"placeholder="Pseudo" name="pseudo" value='<?php echo $_COOKIE["cookiepseudo"]?>' >
+                    <input type="text" id="pseudo"placeholder="Pseudo" name="pseudo" value='<?php if (!isset($_POST["pseudo"])){
+                        echo '';
+                    } else {echo $_COOKIE["cookiepseudo"];}?>'>
                     <input type="text" id="message" placeholder="message" name="message" required >
                     <input id="submit" class="btn btn-primary btn-lg" type="submit" value="chat !" name="send">
                 </form>

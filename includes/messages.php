@@ -21,4 +21,3 @@ foreach ($reponse->fetchAll() as $message){
     echo '<p><strong style="color : '.$message['color'].'">' . htmlspecialchars($message['pseudo']) . '</strong> : ' . htmlspecialchars($message['message']) ." ". $message['date'] .'</p>';
 }
 
-?>

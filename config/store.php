@@ -23,7 +23,7 @@ include "../includes/conexion.php";
  $req->execute(array($_POST['pseudo'], $_POST['message'], getIp(), $_SERVER['HTTP_USER_AGENT']));
 
  //verification de l'existance du pseudo
-$pseudoExist = $bdd->prepare('SELECT COUNT(*) FROM Minichat.user WHERE pseudo = ?');
+$pseudoExist = $bdd->prepare('SELECT COUNT(*) FROM user WHERE pseudo = ?');
 $pseudoExist->execute([$_POST["pseudo"]]);
 
 
@@ -44,4 +44,3 @@ setcookie("cookiepseudo", $_POST["pseudo"], time() + (86400 * 2), "/");
 // Redirection
 //header("location: ../index.php" );
 
-?>
