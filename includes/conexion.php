@@ -1,7 +1,27 @@
-<?php
+<?php 
+// namespace SuperPDO;
+
+
+// class superPDO
+// {
+//     private $config;
+
+//       // Configuration de la class
+//     public function __construct(){
+//         $this->config = include(__DIR__."/../config/app.php");
+//     }
+
+//     private static $pdo;
+
+//     static public function connect($config) {
+//         static::$pdo = new \PDO($config["dsn"], $config["user"], $config["password"]);
+        
+
+// }
+
 try{
 
-$bdd = new PDO('mysql:host=localhost;dbname=Minichat;charset=utf8', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=Minichat_Loretzin_Alexandre;charset=utf8', 'root', '');
 
 }
 
@@ -10,3 +30,5 @@ catch(Exception $e){
     die('Erreur : '.$e->getMessage());
 
 }?>
+
+

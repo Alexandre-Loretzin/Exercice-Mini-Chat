@@ -30,7 +30,7 @@
 
  <!--Messages chat-->
     <div id="chat" style="padding : 10px">
-        <?php include "includes/truc.php";?>
+        <?php include "includes/messages.php";?>
     </div>
 
     <!-- Optional JavaScript -->

@@ -27,7 +27,6 @@ $pseudoExist = $bdd->prepare('SELECT COUNT(*) FROM Minichat.user WHERE pseudo = 
 $pseudoExist->execute([$_POST["pseudo"]]);
 
 
-
 //Si le pseudo n'existe pas, créer la variable sql
 if ($pseudoExist->fetchColumn() === "0"){
         $addpseudo = $bdd->prepare('INSERT INTO user (pseudo, color) VALUES (?, ?)');
@@ -39,7 +38,6 @@ if(!$req) {
         die("Erreur mysql : ".$bdd->errorInfo()[2]);
  }
 
-// die(print_r($req));
 //creation cookie pseudo
 setcookie("cookiepseudo", $_POST["pseudo"], time() + (86400 * 2), "/");
 

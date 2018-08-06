@@ -1,6 +1,6 @@
  //requette Ajax pour rafraichir les messages.
  setInterval(function(){ 
-    $("#chat").load("includes/truc.php");
+    $("#chat").load("includes/messages.php");
  }, 1000);
 
 //requette ajax pour stocker les messages
@@ -14,7 +14,7 @@ function storeMessage(event, form){
             if (error){
                 alert(error);
             }
-            $('input[name="message"]').val("");
+            $('#message').val("");
         }
     })
 }
