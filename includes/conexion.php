@@ -21,7 +21,7 @@
 
 try{
 
-$bdd = new PDO('mysql:host=localhost;dbname=Minichat_Loretzin_Alexandre;charset=utf8', 'root', '');
+$bdd = new PDO('mysql:host='.(getenv('MYSQL_HOST') ?: 'localhost').';dbname=Minichat_Loretzin_Alexandre;charset=utf8', 'root', '');
 
 }
 
