@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `Minichat_Loretzin_Alexandre`
 --
-
+CREATE DATABASE IF NOT EXISTS Minichat_Loretzin_Alexandre DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci; USE mini_chat_titmarie;
 -- --------------------------------------------------------
 
 --
